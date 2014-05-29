@@ -22,7 +22,7 @@ import javax.swing.Timer;
 public class Countdown extends JFrame {
 
     private JTextField txtCount;
-    private JButton btnCountdown;
+    private final JButton btnCountdown;
     private JProgressBar process;
     private Timer time;
 
@@ -60,11 +60,11 @@ public class Countdown extends JFrame {
         });
         
         process = new JProgressBar();
-        process.setBounds(20, 70, 300, 30);
+        process.setBounds(20, 70, 290, 30);
         process.setValue(100);
         this.getContentPane().add(process);
         
-        this.setSize(340, 150);
+        this.setSize(340, 140);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
