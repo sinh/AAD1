@@ -23,12 +23,16 @@ public class TCPServerDemo {
     public static void main(String[] args) throws UnknownHostException, IOException {
         // TODO code application logic here
         int port = 4321;
+        //Tạo một ServerSocket
         ServerSocket ss = new ServerSocket(port);
         System.out.println("Server is running!");
         while (true) {
+            //Khi nhận một kết nối từ client
             try (Socket s = ss.accept()) {
+                //Lấy địa chỉ IP và Port của client kết nối đến
                 String response = "Hello " + s.getInetAddress() + " on port " + s.getPort() + "\r\n";
                 response += "This is " + s.getLocalAddress() + " on port " + s.getLocalPort() + "\r\n";
+                //Trả về cho client chuỗi response
                 OutputStream out = s.getOutputStream();
                 out.write(response.getBytes("US-ASCII"));
                 out.flush();

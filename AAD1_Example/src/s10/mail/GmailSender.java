@@ -144,11 +144,11 @@ public class GmailSender extends javax.swing.JFrame {
             props.put("mail.smtp.user", txtGmail.getText());
             props.put("mail.smtp.password", String.valueOf(txtPassword.getPassword()));
             props.put("mail.smtp.auth", "true");
-            /*
+            
             //Use SSL
             props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
             props.put("mail.smtp.port", "465");
-            */
+            
 
             Session session = Session.getDefaultInstance(props, null);
             MimeMessage message = new MimeMessage(session);

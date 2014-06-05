@@ -134,6 +134,9 @@ public class GmailReader extends javax.swing.JFrame {
     private void btnReceiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReceiveActionPerformed
         try {
             Properties props = new Properties();
+            props.setProperty("mail.imap.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+            props.setProperty("mail.imap.socketFactory.port", "993");
+            
             Session session = Session.getDefaultInstance(props, null);
             Store store = session.getStore("imap");
             store.connect("imap.gmail.com", txtGmail.getText(), String.valueOf(txtPassword.getPassword()));

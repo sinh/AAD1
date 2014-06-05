@@ -20,13 +20,15 @@ public class TCPClientDemo {
      * @throws java.net.UnknownHostException
      */
     public static void main(String[] args) throws UnknownHostException, IOException {
-        String hostname = "localhost";
+        String hostname = "10.22.5.184";
         int port = 4321;
+        //Tạo một kết nối đến Server (hostname, cổng 4321)
         Socket socket = new Socket(hostname, port);
         InputStream in = socket.getInputStream();
-        
+        //Đọc dữ liệu từ Server trả về
         byte read[] = new byte[1024];
         int len = in.read(read);
+        //Đổi kiểu dữ liệu từ byte sang chuỗi và hiển thị
         String str = new String(read, 0, len);
         System.out.println(str);
     }
